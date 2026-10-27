@@ -15,7 +15,11 @@
             </div>
             <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem;">
                 <span>Status: <x-filament::badge :color="$run->status->getColor()">{{ $run->status->getLabel() }}</x-filament::badge></span>
-                <x-filament::button tag="a" :href="$this->pdfUrl()" color="primary">Download PDF</x-filament::button>
+                {{-- A file download, not a Livewire request, so the spinner shows for a short moment after the click. --}}
+                <x-filament::button tag="a" :href="$this->pdfUrl()" color="primary" x-data="{ busy: false }" @click="busy = true; setTimeout(() => busy = false, 2500)">
+                    Download PDF
+                    <x-filament::loading-indicator class="h-4 w-4" x-show="busy" x-cloak />
+                </x-filament::button>
             </div>
         </div>
 
