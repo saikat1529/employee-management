@@ -9,8 +9,8 @@ class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
-        // updateOrCreate lets this seeder be re-run safely.
-        User::updateOrCreate(
+        // Creates the admin only if it does not exist. An existing password is never reset.
+        User::firstOrCreate(
             ['email' => 'admin@demo.com'],
             ['name' => 'Admin', 'password' => 'password'],
         );
