@@ -75,6 +75,7 @@ jobs:
           cd "$DEPLOY_PATH"
           git pull --ff-only origin main
           composer install --no-dev --optimize-autoloader --no-interaction
+          php artisan filament:assets
           php artisan migrate --force
           php artisan config:cache
           php artisan route:cache
