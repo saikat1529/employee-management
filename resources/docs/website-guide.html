@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Demo Portal — Website Guide</title>
+<style>
+:root {
+  --bg: #FDFDFC;
+  --card: #ffffff;
+  --text: #1b1b18;
+  --muted: #5f5e5a;
+  --line: #e3e3e0;
+  --accent: #1b1b18;
+  --soft: #f4f4f2;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0a0a;
+    --card: #161615;
+    --text: #EDEDEC;
+    --muted: #A1A09A;
+    --line: #3E3E3A;
+    --accent: #EDEDEC;
+    --soft: #1d1d1b;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --card: #161615;
+  --text: #EDEDEC;
+  --muted: #A1A09A;
+  --line: #3E3E3A;
+  --accent: #EDEDEC;
+  --soft: #1d1d1b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+header.top { border-bottom: 2px solid var(--accent); padding-bottom: 16px; margin-bottom: 28px; }
+header.top h1 { margin: 0 0 4px; font-size: 30px; }
+header.top p { margin: 0; color: var(--muted); }
+nav.toc { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 20px; margin-bottom: 32px; }
+nav.toc h2 { margin: 0 0 8px; font-size: 16px; }
+nav.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 32px; }
+nav.toc li { margin-bottom: 4px; }
+nav.toc a { color: var(--text); }
+section { margin-bottom: 36px; }
+h2 { font-size: 22px; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+h3 { font-size: 17px; margin: 22px 0 6px; }
+p { margin: 0 0 12px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+.note { background: var(--soft); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 4px; margin: 14px 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; margin: 14px 0; }
+.card h3 { margin-top: 0; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: 15px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--soft); }
+.legend span { display: inline-block; padding: 2px 10px; border-radius: 3px; margin: 2px 6px 2px 0; font-size: 14px; }
+.c-green { background: #d7f0dc; color: #14532d; }
+.c-red { background: #f8d7d4; color: #7a1d14; }
+.c-grey { background: #e5e5e2; color: #3d3d3a; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .c-green { background: #173d24; color: #bfe9cb; }
+  :root:not([data-theme="light"]) .c-red { background: #4a1a15; color: #f5c2bc; }
+  :root:not([data-theme="light"]) .c-grey { background: #2b2b29; color: #d6d6d2; }
+}
+:root[data-theme="dark"] .c-green { background: #173d24; color: #bfe9cb; }
+:root[data-theme="dark"] .c-red { background: #4a1a15; color: #f5c2bc; }
+:root[data-theme="dark"] .c-grey { background: #2b2b29; color: #d6d6d2; }
+@media (max-width: 640px) {
+  .wrap { padding: 20px 16px 48px; }
+  nav.toc ol { columns: 1; }
+  header.top h1 { font-size: 24px; }
+}
+@media print {
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .wrap { max-width: none; padding: 0; }
+  nav.toc { break-inside: avoid; }
+  section { break-inside: auto; }
+  h2, h3 { break-after: avoid; }
+  .card, table, .note { break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Demo Portal — Website Guide</h1>
+  <p>A plain-English guide for the client and new team members. No technical knowledge needed.</p>
+</header>
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#purpose">What the site is for</a></li>
+    <li><a href="#login">How to log in</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#employees">Employees</a></li>
+    <li><a href="#departments">Departments</a></li>
+    <li><a href="#attendance">Attendance</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="#salary-rules">Salary Rules</a></li>
+    <li><a href="#payroll">Payroll</a></li>
+    <li><a href="#payslip">Payslip</a></li>
+    <li><a href="#forgot-password">Forgot password</a></li>
+    <li><a href="#payroll-rules">Payroll rules in short</a></li>
+    <li><a href="#limits">Current limits of this demo</a></li>
+    <li><a href="#who">Who can do what</a></li>
+  </ol>
+</nav>
+
+<section id="purpose">
+  <h2>1. What the site is for</h2>
+  <p>Demo Portal is a simple system to keep track of employees, their departments, and their daily attendance. From the same place you can see how the team is doing, work out each person's monthly pay based on attendance, and print a payslip for each employee.</p>
+  <p>In short, it helps you do four things:</p>
+  <ul>
+    <li>Keep the list of employees and departments up to date.</li>
+    <li>Record who was in, late, on leave or absent each day.</li>
+    <li>Calculate the monthly payroll from those records.</li>
+    <li>Show the results on a dashboard and a calendar.</li>
+  </ul>
+  <div class="note">This is a <strong>demo</strong>. It shows how the system works. The data is sample data, and some features (such as sending emails or paying salaries) are not part of it yet.</div>
+</section>
+
+<section id="login">
+  <h2>2. How to log in</h2>
+  <ol>
+    <li>Open the admin page of the website. It is the address that ends in <em>/admin</em>.</li>
+    <li>Type the admin email address and the password.</li>
+    <li>Press <strong>Log in</strong>. You will see the Dashboard.</li>
+  </ol>
+  <p>If you forget the password, use the <strong>Forgot password</strong> link on the login page. See section 11.</p>
+  <p>The menu on the left side has all the pages. Click any name to open that page.</p>
+</section>
+
+<section id="dashboard">
+  <h2>3. Dashboard</h2>
+  <p>The Dashboard is the first page after you log in. It gives a quick picture of the team.</p>
+  <div class="card">
+    <h3>What you see</h3>
+    <ul>
+      <li><strong>Greeting:</strong> a short welcome message at the top.</li>
+      <li><strong>Total active employees:</strong> the number of employees who are not suspended.</li>
+      <li><strong>Late-rate chart (last 30 days):</strong> a chart that shows how many people were late each day over the last 30 days. Use it to spot busy or problem days.</li>
+      <li><strong>Today's leave and half-day list:</strong> the names of people who are on leave or on a half day today.</li>
+      <li><strong>Best employees (Present days, last 30 days):</strong> the employees with the most Present days in the last 30 days.</li>
+      <li><strong>Employees by department (pie chart):</strong> how the active employees are split across the departments.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="employees">
+  <h2>4. Employees</h2>
+  <p>This page is the list of everyone in the company.</p>
+  <ul>
+    <li><strong>List:</strong> shows each employee with an ID (for example <em>EMP-0001</em>), name, department, salary and status.</li>
+    <li><strong>Search:</strong> type a name or ID to find someone quickly.</li>
+    <li><strong>Filters:</strong> narrow the list by <em>status</em> (active or suspended) and by <em>department</em>.</li>
+    <li><strong>Add:</strong> create a new employee. Each employee has their own ID, in the form EMP-0001, EMP-0002 and so on.</li>
+    <li><strong>Edit:</strong> change an employee's details, such as name, department or salary.</li>
+    <li><strong>Suspend:</strong> pause an employee who should not be counted or paid for now. A suspended employee is hidden from the active count and is left out of payroll.</li>
+    <li><strong>Reactivate:</strong> bring a suspended employee back to active.</li>
+  </ul>
+  <div class="note"><strong>There is no delete.</strong> To stop using an employee, suspend them. This keeps their past records safe.</div>
+</section>
+
+<section id="departments">
+  <h2>5. Departments</h2>
+  <p>Departments are the teams or groups that employees belong to (for example Sales, Finance or Operations).</p>
+  <ul>
+    <li><strong>Add:</strong> create a new department.</li>
+    <li><strong>Edit:</strong> change a department's name.</li>
+    <li><strong>Suspend and reactivate:</strong> a suspended department is hidden from the employee dropdown, so no one new can be put into it. Existing employees keep their link to it.</li>
+  </ul>
+  <div class="note"><strong>There is no delete.</strong> Suspend a department you no longer use.</div>
+</section>
+
+<section id="attendance">
+  <h2>6. Attendance</h2>
+  <p>This page is where the daily record of each person is kept. Each record says what happened for one person on one day.</p>
+  <h3>The list</h3>
+  <p>The list shows all attendance records. You can use the filters at the top (for example by date or by employee) to find the records you need.</p>
+  <h3>Add Attendance (one person)</h3>
+  <p>Use <strong>Add Attendance</strong> to record one person for one day. Choose the employee, the date, the status and, if needed, the in and out times.</p>
+  <h3>Mark Attendance (many people, one day)</h3>
+  <p>Use <strong>Mark Attendance</strong> when you want to record a whole group for the same day, for example today's team. It is faster than adding each person one by one.</p>
+  <div class="card">
+    <h3>Important rules</h3>
+    <ul>
+      <li><strong>One record per person per day.</strong> You cannot have two records for the same person on the same date.</li>
+      <li><strong>Statuses:</strong> Present, Absent, On Leave, Late, Half Day.</li>
+      <li><strong>Leave types:</strong> Casual, Sick, Annual (used when the status is On Leave).</li>
+      <li><strong>Working hours</strong> are worked out automatically from the in time and the out time.</li>
+      <li><strong>Edit is allowed</strong> if a record was entered wrongly. <strong>There is no delete.</strong></li>
+    </ul>
+  </div>
+</section>
+
+<section id="calendar">
+  <h2>7. Calendar</h2>
+  <p>The Calendar shows attendance across one month, like a wall calendar.</p>
+  <ul>
+    <li><strong>Previous and Next</strong> buttons move you to the month before or after.</li>
+    <li><strong>Employee dropdown:</strong> pick one person to see only their month, or pick <em>All employees</em> to see everyone.</li>
+  </ul>
+  <h3>When one employee is chosen</h3>
+  <p>Each day shows the in and out times, coloured like this:</p>
+  <div class="legend">
+    <span class="c-green">Green = Present</span>
+    <span class="c-red">Red = Late</span>
+    <span class="c-grey">Grey = On leave or Half day</span>
+    <span class="c-grey">Plain text "Absent" = Absent</span>
+  </div>
+  <h3>When All employees is chosen</h3>
+  <p>Each day shows small badges with the counts: <strong>Attendance</strong>, <strong>Late</strong> and <strong>Other</strong>. A badge only appears when its number is above zero, so an empty badge means nothing was recorded in that group.</p>
+</section>
+
+<section id="salary-rules">
+  <h2>8. Salary Rules</h2>
+  <p>This page holds the settings that the payroll uses. It is where the company sets how attendance changes pay:</p>
+  <ul>
+    <li><strong>Days in the month</strong> used to work out the daily rate (the standard is 30 days).</li>
+    <li><strong>Late days per one absent:</strong> how many late days equal one absent day (the standard is 3).</li>
+    <li><strong>Half-day fraction:</strong> how much of a day a half day counts for (the standard is 0.5).</li>
+  </ul>
+  <p>Change these only when the company's pay policy changes. Changes apply the next time payroll is generated.</p>
+</section>
+
+<section id="payroll">
+  <h2>9. Payroll</h2>
+  <p>Payroll works out the pay for every active employee for one month.</p>
+  <ol>
+    <li>Go to <strong>Payroll</strong> and <strong>pick a month</strong>.</li>
+    <li>Press <strong>Generate payroll</strong>. The system counts each employee's days (Present, Absent, On Leave, Late, Half Day) and works out the net pay.</li>
+    <li>Look through the list. For each employee you see their counts and their <strong>net pay</strong>.</li>
+    <li>When everything is correct, press <strong>Mark as paid</strong>.</li>
+  </ol>
+  <div class="card">
+    <h3>What "Mark as paid" means</h3>
+    <ul>
+      <li>It <strong>locks the month</strong>. The payroll for that month can no longer be recalculated.</li>
+      <li>Nothing is deleted. The record stays for future checks.</li>
+    </ul>
+  </div>
+  <p>The demo does not send any money. "Mark as paid" only records the decision in the system.</p>
+</section>
+
+<section id="payslip">
+  <h2>10. Payslip</h2>
+  <p>A payslip shows one employee's pay for one month: the days counted, the daily rate, any deductions, and the final net pay.</p>
+  <ul>
+    <li>Payslips are created <strong>per employee, per month</strong>, from the payroll for that month.</li>
+    <li>You can open a payslip on screen.</li>
+    <li><strong>Download PDF:</strong> you can download the payslip as a PDF file to keep or print.</li>
+  </ul>
+</section>
+
+<section id="forgot-password">
+  <h2>11. Forgot password</h2>
+  <p>The demo has a simple password reset to show how it works:</p>
+  <ul>
+    <li>Enter the admin email address on the Forgot password page.</li>
+    <li>Enter the <strong>fixed demo reset code</strong> that the owner gives you.</li>
+    <li>Set a new password.</li>
+  </ul>
+  <div class="note"><strong>No email is sent.</strong> The demo uses one fixed code instead of a code sent to your inbox. Anyone who knows the code can reset the password, so this is for demonstration only.</div>
+</section>
+
+<section id="payroll-rules">
+  <h2>12. Payroll rules in short</h2>
+  <ul>
+    <li><strong>Daily rate = monthly salary ÷ 30.</strong></li>
+    <li><strong>3 late days = 1 absent day.</strong></li>
+    <li><strong>Half day = 0.5 of a day.</strong></li>
+    <li><strong>On leave is paid.</strong></li>
+    <li><strong>Absent = 1 day deducted.</strong></li>
+    <li><strong>Days with no record = no deduction.</strong></li>
+    <li><strong>Suspended employees are excluded</strong> from payroll.</li>
+  </ul>
+</section>
+
+<section id="limits">
+  <h2>13. Current limits of this demo</h2>
+  <ul>
+    <li><strong>Single admin login.</strong> There is one admin account for the whole demo.</li>
+    <li><strong>The demo password must be changed</strong> before the site is used for real work.</li>
+    <li><strong>No real email.</strong> Password resets and notices are not sent by email.</li>
+    <li><strong>No payment or bank transfer.</strong> "Mark as paid" records the decision only.</li>
+    <li><strong>No tax, bonus or allowance.</strong> Pay is salary and attendance only.</li>
+    <li><strong>SQLite database.</strong> A simple file-based database, suitable for a demo.</li>
+    <li><strong>Demo data is loaded once.</strong> The sample data is added one time and is not reset when the site restarts.</li>
+  </ul>
+</section>
+
+<section id="who">
+  <h2>14. Who can do what</h2>
+  <p>Today there is <strong>one role: Admin</strong>. The admin can see and change everything: employees, departments, attendance, salary rules, payroll and payslips.</p>
+</section>
+
+</div>
+</body>
+</html>
