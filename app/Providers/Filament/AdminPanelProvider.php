@@ -28,6 +28,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            // Single-page mode: moving between admin pages skips the full browser reload.
+            ->spa()
+            // The payslip PDF is a file download, so it must stay a normal link.
+            ->spaUrlExceptions(['*/payroll/*/employees/*/pdf'])
             ->passwordReset(RequestResetCode::class, ResetPasswordWithCode::class)
             ->colors([
                 'primary' => Color::Amber,

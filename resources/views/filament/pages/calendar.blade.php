@@ -14,7 +14,7 @@
     <x-filament::section>
         <div style="max-width: 24rem;">
             <label for="calendar-employee" style="display: block; font-weight: 600; margin-bottom: 0.375rem;">Employee</label>
-            <x-filament::input.wrapper>
+            <x-filament::input.wrapper wire:target="employeeId">
                 <x-filament::input.select id="calendar-employee" wire:model.live="employeeId">
                     @foreach ($employeeOptions as $value => $label)
                         <option value="{{ $value }}">{{ $label }}</option>

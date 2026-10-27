@@ -11,7 +11,9 @@
         <div style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
             <div>
                 <label for="payroll-month" style="display: block; font-weight: 600; margin-bottom: 0.375rem;">Month</label>
-                <x-filament::input id="payroll-month" type="month" wire:model.live="month" />
+                <x-filament::input.wrapper wire:target="month">
+                    <x-filament::input id="payroll-month" type="month" wire:model.live="month" />
+                </x-filament::input.wrapper>
             </div>
 
             <div style="font-size: 0.9rem;">
