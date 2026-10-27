@@ -1,0 +1,35 @@
+services:
+  app:
+    build: .
+    container_name: demo-portal
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8000
+      DB_CONNECTION: sqlite
+      DB_DATABASE: /var/www/html/database/database.sqlite
+    volumes:
+      # Live-edit the project folder inside the container
+      - .:/var/www/html
+      # Keep the container's own vendor folder (the host vendor folder is not used)
+      - app_vendor:/var/www/html/vendor
+    # On start: make sure the SQLite file exists, migrate, seed (safe to re-run), then serve
+    command:
+      - sh
+      - -c
+      - >-
+        touch database/database.sqlite &&
+        php artisan migrate --force &&
+        php artisan db:seed --force &&
+        php artisan serve --host=0.0.0.0 --port=8000
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "-o", "/dev/null", "http://localhost:8000/admin/login"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      start_period: 30s
+
+volumes:
+  app_vendor:
