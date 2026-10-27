@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quotation — Demo Portal</title>
+<style>
+:root {
+  --bg: #FDFDFC;
+  --card: #ffffff;
+  --text: #1b1b18;
+  --muted: #5f5e5a;
+  --line: #d9d9d5;
+  --soft: #f4f4f2;
+  --accent: #1b1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0a0a;
+    --card: #161615;
+    --text: #EDEDEC;
+    --muted: #A1A09A;
+    --line: #3E3E3A;
+    --soft: #1d1d1b;
+    --accent: #EDEDEC;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --card: #161615;
+  --text: #EDEDEC;
+  --muted: #A1A09A;
+  --line: #3E3E3A;
+  --soft: #1d1d1b;
+  --accent: #EDEDEC;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.page { max-width: 860px; margin: 0 auto; padding: 32px 22px 56px; background: var(--card); }
+.draft-note {
+  border: 1px dashed var(--muted);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+header.top { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; border-bottom: 2px solid var(--accent); padding-bottom: 14px; margin-bottom: 22px; }
+header.top h1 { font-size: 24px; margin: 0 0 4px; }
+header.top .sub { color: var(--muted); margin: 0; }
+.meta { font-size: 15px; }
+.meta div { margin-bottom: 8px; white-space: nowrap; }
+.field-line { display: inline-block; min-width: 260px; border-bottom: 1px solid var(--text); }
+h2 { font-size: 17px; margin: 26px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
+p { margin: 0 0 10px; }
+ul, ol { margin: 0 0 12px; padding-left: 22px; }
+li { margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; margin: 6px 0 14px; font-size: 14px; }
+th, td { padding: 7px 9px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { background: var(--soft); font-weight: 600; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+tr.total td { font-weight: 600; border-top: 2px solid var(--accent); }
+tr.grand td { font-weight: 700; border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); }
+.sign { display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
+.sign div { flex: 1; min-width: 240px; }
+.sign .line { border-bottom: 1px solid var(--text); height: 36px; margin-bottom: 6px; }
+.small { font-size: 13px; color: var(--muted); }
+@media (max-width: 640px) {
+  .page { padding: 22px 16px 40px; }
+  header.top { flex-direction: column; }
+  .meta div { white-space: normal; }
+  .field-line { min-width: 0; width: 100%; }
+  table { font-size: 13px; }
+  th, td { padding: 6px 6px; }
+}
+@media print {
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .page { max-width: none; padding: 0; background: #fff; }
+  :root { --line: #999; --soft: #f0f0f0; --card: #fff; --text: #000; --muted: #444; --accent: #000; --bg: #fff; }
+  h2, th { break-after: avoid; }
+  table, .sign, .block { break-inside: avoid; }
+  .draft-note { display: none; }
+  @page { margin: 16mm; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <div class="draft-note">Rate and terms are the template's default; edit before sending.</div>
+
+  <header class="top">
+    <div>
+      <h1>Quotation — Demo Portal (Employee, Attendance and Payroll System)</h1>
+      <p class="sub">From: [Your company name]</p>
+    </div>
+    <div class="meta">
+      <div>Client name: <span class="field-line">&nbsp;</span></div>
+      <div>Date: <span class="field-line" style="min-width:180px">&nbsp;</span></div>
+      <div>Quotation number: <span class="field-line" style="min-width:160px">&nbsp;</span></div>
+    </div>
+  </header>
+
+  <h2>1. Scope of work (included)</h2>
+  <ul>
+    <li>Employees: list, search, filters, add, edit, suspend and reactivate.</li>
+    <li>Departments: add, edit, suspend and reactivate.</li>
+    <li>Attendance: list, add one record, mark many people for one day, filters.</li>
+    <li>Dashboard: greeting, key numbers, late-rate chart, leave list, best employees, department chart.</li>
+    <li>Salary rules: days in month, late-to-absent rule, half-day fraction.</li>
+    <li>Payroll: generate for a month, review each employee, mark as paid (locks the month).</li>
+    <li>Payslip on screen, per employee per month.</li>
+    <li>Login and forgot password (demo version).</li>
+    <li>CI/CD and server deployment.</li>
+    <li>Testing and quality checks.</li>
+    <li>Documentation and handover.</li>
+  </ul>
+  <p><strong>Not included in this quotation:</strong> the Calendar, the payslip PDF download, and the page-loading improvements. These can be added later as a change request.</p>
+
+  <h2>2. Effort and cost</h2>
+  <p class="small">Rate: 800 BDT per hour.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th class="num">Hours</th>
+        <th class="num">Rate (BDT/h)</th>
+        <th class="num">Cost (BDT)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Login and forgot password</td><td class="num">8 h</td><td class="num">800</td><td class="num">6,400</td></tr>
+      <tr><td>Employees</td><td class="num">16 h</td><td class="num">800</td><td class="num">12,800</td></tr>
+      <tr><td>Departments</td><td class="num">6 h</td><td class="num">800</td><td class="num">4,800</td></tr>
+      <tr><td>Attendance</td><td class="num">20 h</td><td class="num">800</td><td class="num">16,000</td></tr>
+      <tr><td>Dashboard</td><td class="num">14 h</td><td class="num">800</td><td class="num">11,200</td></tr>
+      <tr><td>Salary rules</td><td class="num">6 h</td><td class="num">800</td><td class="num">4,800</td></tr>
+      <tr><td>Payroll</td><td class="num">16 h</td><td class="num">800</td><td class="num">12,800</td></tr>
+      <tr><td>Testing and quality checks</td><td class="num">6 h</td><td class="num">800</td><td class="num">4,800</td></tr>
+      <tr><td>Server setup, CI/CD and deployment</td><td class="num">10 h</td><td class="num">800</td><td class="num">8,000</td></tr>
+      <tr><td>Documentation and handover</td><td class="num">6 h</td><td class="num">800</td><td class="num">4,800</td></tr>
+      <tr class="total"><td>Subtotal</td><td class="num">108 h</td><td class="num"></td><td class="num">86,400</td></tr>
+      <tr><td>VAT 15%</td><td class="num"></td><td class="num"></td><td class="num">12,960</td></tr>
+      <tr class="grand"><td>Total with VAT</td><td class="num"></td><td class="num"></td><td class="num">99,360 BDT</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Total is below 100,000 BDT including VAT.</strong></p>
+
+  <h2>3. Payment schedule</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Milestone</th>
+        <th class="num">Share</th>
+        <th class="num">Amount (BDT)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Work order</td><td class="num">20%</td><td class="num">19,872</td></tr>
+      <tr><td>Midway</td><td class="num">50%</td><td class="num">49,680</td></tr>
+      <tr><td>Delivery</td><td class="num">30%</td><td class="num">29,808</td></tr>
+      <tr class="grand"><td>Total</td><td class="num">100%</td><td class="num">99,360</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Timeline</h2>
+  <p>3 weeks: 108 hours is about 13.5 working days at 8 hours a day, within 15 working days.</p>
+
+  <h2>5. Validity</h2>
+  <p>This quotation is valid for 30 days from the date of the quotation.</p>
+
+  <h2>6. Assumptions</h2>
+  <ul>
+    <li>The client provides clear requirements and gives timely feedback.</li>
+    <li>One round of changes is included per milestone.</li>
+    <li>Hosting cost is paid by the client (a server and a domain).</li>
+    <li>Payment is due in the stated schedule.</li>
+    <li>A change request is needed for anything not listed in this quotation.</li>
+  </ul>
+
+  <h2>7. Not included</h2>
+  <ul>
+    <li>Calendar.</li>
+    <li>Payslip PDF download.</li>
+    <li>Page-loading improvements.</li>
+    <li>Bank or payment integration.</li>
+    <li>Tax, bonus or allowance features.</li>
+    <li>Email sending.</li>
+    <li>Mobile app.</li>
+    <li>Support after handover (offered separately as maintenance).</li>
+  </ul>
+
+  <h2>8. Acceptance</h2>
+  <p>By signing below, both parties agree to the scope, cost, payment schedule and assumptions in this quotation.</p>
+  <div class="sign">
+    <div>
+      <div class="line"></div>
+      <div>Client signature</div>
+      <div>Name: ______________________________</div>
+      <div>Date: ______________________________</div>
+    </div>
+    <div>
+      <div class="line"></div>
+      <div>For [Your company name]</div>
+      <div>Name: ______________________________</div>
+      <div>Date: ______________________________</div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
